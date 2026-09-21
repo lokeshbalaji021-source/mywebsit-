@@ -1,0 +1,166 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 420" width="100%" height="100%">
+  <defs>
+    <!-- Background Aura Glow -->
+    <radialGradient id="mascotAura" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#4f46e5" stop-opacity="0.35"/>
+      <stop offset="60%" stop-color="#06b6d4" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#0d0e15" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Neon Rim Glow Filter -->
+    <filter id="neonCyanGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="neonGreenGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Gradients -->
+    <linearGradient id="lStemGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f0ff"/>
+      <stop offset="35%" stop-color="#3b82f6"/>
+      <stop offset="85%" stop-color="#7c3aed"/>
+      <stop offset="100%" stop-color="#4c1d95"/>
+    </linearGradient>
+
+    <linearGradient id="lFootGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="60%" stop-color="#0ea5e9"/>
+      <stop offset="100%" stop-color="#00f0ff"/>
+    </linearGradient>
+
+    <linearGradient id="bBodyGrad" x1="15%" y1="0%" x2="85%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="30%" stop-color="#60a5fa"/>
+      <stop offset="70%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#a855f7"/>
+    </linearGradient>
+
+    <linearGradient id="eyeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#a3e635"/>
+      <stop offset="50%" stop-color="#4ade80"/>
+      <stop offset="100%" stop-color="#22c55e"/>
+    </linearGradient>
+
+    <linearGradient id="limbGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#6366f1"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Ambient Glow Backdrop -->
+  <circle cx="200" cy="210" r="180" fill="url(#mascotAura)"/>
+
+  <!-- Ground Shadow -->
+  <ellipse cx="200" cy="385" rx="145" ry="18" fill="#000000" opacity="0.45"/>
+
+  <!-- ==================== LETTER 'L' 3D BASE ==================== -->
+  <g id="letter-L">
+    <!-- L Outer 3D Extrusion Shadow -->
+    <path d="M 85 95 L 140 95 L 140 280 L 290 280 L 290 355 L 85 355 Z" fill="#2e1065" opacity="0.8"/>
+    
+    <!-- L Main Face -->
+    <path d="M 75 105 L 130 105 L 130 290 L 285 290 L 285 350 L 75 350 Z" 
+          fill="url(#lStemGrad)" stroke="#38bdf8" stroke-width="3" stroke-linejoin="round"/>
+
+    <!-- L Inner Bevel Highlight Rim -->
+    <path d="M 83 113 L 122 113 L 122 298 L 277 298 L 277 342 L 83 342 Z" 
+          fill="none" stroke="#ffffff" stroke-opacity="0.25" stroke-width="2"/>
+
+    <!-- L Cartoon Arm (Hands on Hip) -->
+    <path d="M 75 220 C 40 220 30 255 45 285 C 55 305 75 290 75 275" 
+          fill="none" stroke="url(#limbGrad)" stroke-width="14" stroke-linecap="round"/>
+    <!-- Hand on hip -->
+    <circle cx="70" cy="272" r="9" fill="#38bdf8"/>
+  </g>
+
+  <!-- ==================== MASCOT 'B' LEGS ==================== -->
+  <g id="b-legs">
+    <!-- Left Leg & Shoe -->
+    <path d="M 185 270 L 175 305" stroke="url(#limbGrad)" stroke-width="12" stroke-linecap="round"/>
+    <ellipse cx="170" cy="308" rx="14" ry="8" fill="#38bdf8"/>
+    
+    <!-- Right Leg & Shoe -->
+    <path d="M 245 260 L 255 300" stroke="url(#limbGrad)" stroke-width="12" stroke-linecap="round"/>
+    <ellipse cx="260" cy="303" rx="14" ry="8" fill="#38bdf8"/>
+  </g>
+
+  <!-- ==================== MASCOT 'B' MAIN BODY ==================== -->
+  <g id="letter-B" transform="rotate(-6 220 180)">
+    <!-- Antennas -->
+    <path d="M 175 90 C 160 55 135 60 145 40" fill="none" stroke="#38bdf8" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="145" cy="40" r="10" fill="#00f0ff" filter="url(#neonCyanGlow)"/>
+
+    <path d="M 215 85 C 220 50 230 45 235 32" fill="none" stroke="#38bdf8" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="235" cy="32" r="10" fill="#00f0ff" filter="url(#neonCyanGlow)"/>
+
+    <!-- B 3D Body Outline & Chamfer -->
+    <path d="M 140 85 C 140 85 235 75 265 95 C 290 112 290 145 265 160 C 298 175 300 220 265 245 C 235 265 140 260 140 260 Z" 
+          fill="url(#bBodyGrad)" stroke="#67e8f9" stroke-width="4" stroke-linejoin="round" filter="url(#neonCyanGlow)"/>
+
+    <!-- B Inner Top Hole -->
+    <rect x="195" y="112" width="42" height="32" rx="10" fill="#1e1b4b" stroke="#38bdf8" stroke-width="2"/>
+    <!-- B Inner Bottom Hole -->
+    <rect x="195" y="185" width="48" height="42" rx="12" fill="#1e1b4b" stroke="#38bdf8" stroke-width="2"/>
+
+    <!-- Face Features: Eyebrows -->
+    <!-- Left Eyebrow (Tilted mischievous) -->
+    <path d="M 162 110 Q 185 96 200 114" fill="none" stroke="#0f172a" stroke-width="6" stroke-linecap="round"/>
+    <!-- Right Eyebrow -->
+    <path d="M 235 110 Q 255 92 270 112" fill="none" stroke="#0f172a" stroke-width="6" stroke-linecap="round"/>
+
+    <!-- Glowing Green Eyes -->
+    <g id="eyes" filter="url(#neonGreenGlow)">
+      <!-- Left Eye -->
+      <ellipse cx="182" cy="126" rx="15" ry="17" fill="url(#eyeGrad)" stroke="#14532d" stroke-width="2"/>
+      <ellipse cx="184" cy="126" rx="7" ry="11" fill="#052e16"/>
+      <circle cx="180" cy="120" r="3.5" fill="#ffffff"/>
+
+      <!-- Right Eye -->
+      <ellipse cx="250" cy="124" rx="15" ry="17" fill="url(#eyeGrad)" stroke="#14532d" stroke-width="2"/>
+      <ellipse cx="252" cy="124" rx="7" ry="11" fill="#052e16"/>
+      <circle cx="248" cy="118" r="3.5" fill="#ffffff"/>
+    </g>
+
+    <!-- Confident Smirk / Smile -->
+    <path d="M 188 156 Q 215 178 245 152" fill="none" stroke="#0f172a" stroke-width="5" stroke-linecap="round"/>
+    <path d="M 245 152 L 250 148" stroke="#0f172a" stroke-width="4" stroke-linecap="round"/>
+  </g>
+
+  <!-- ==================== RIGHT ARM & FLOATING CODE SYMBOL ==================== -->
+  <g id="right-arm">
+    <!-- Extended Arm -->
+    <path d="M 295 195 C 325 190 340 215 348 200" fill="none" stroke="url(#limbGrad)" stroke-width="12" stroke-linecap="round"/>
+    <!-- Open Palm -->
+    <ellipse cx="352" cy="198" rx="10" ry="7" fill="#38bdf8"/>
+    <circle cx="360" cy="195" r="4" fill="#38bdf8"/>
+    <circle cx="358" cy="202" r="4" fill="#38bdf8"/>
+
+    <!-- Floating Neon Cyan Code Tag '<>' -->
+    <g transform="translate(325, 125)" filter="url(#neonCyanGlow)">
+      <!-- '<' -->
+      <path d="M 22 10 L 8 24 L 22 38" fill="none" stroke="#00f0ff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- '>' -->
+      <path d="M 36 10 L 50 24 L 36 38" fill="none" stroke="#00f0ff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </g>
+
+  <!-- ==================== VERIFIED CHECKMARK BADGE ==================== -->
+  <g id="verified-badge" transform="translate(295, 245)" filter="url(#neonGreenGlow)">
+    <circle cx="30" cy="30" r="22" fill="#0f172a" stroke="#38bdf8" stroke-width="4"/>
+    <!-- Bug Antenna Crown -->
+    <path d="M 24 8 C 22 2 18 2 18 0" stroke="#38bdf8" stroke-width="2" stroke-linecap="round"/>
+    <path d="M 36 8 C 38 2 42 2 42 0" stroke="#38bdf8" stroke-width="2" stroke-linecap="round"/>
+    <!-- Green Checkmark -->
+    <path d="M 20 31 L 27 38 L 41 22" fill="none" stroke="#4ade80" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

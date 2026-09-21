@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <defs>
+    <linearGradient id="favGrad" x1="10%" y1="10%" x2="90%" y2="90%">
+      <stop offset="0%" stop-color="#5B6CF0"/>
+      <stop offset="50%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#00D2FF"/>
+    </linearGradient>
+  </defs>
+  <!-- Background Squircle -->
+  <rect width="100" height="100" rx="28" fill="url(#favGrad)"/>
+  <!-- Inner Glass Border -->
+  <rect x="2" y="2" width="96" height="96" rx="26" fill="none" stroke="#ffffff" stroke-opacity="0.28" stroke-width="2"/>
+  <!-- Pixel LB Monogram -->
+  <g transform="translate(18.5, 27.5) scale(2.52)" fill="#FFFFFF" shape-rendering="crispEdges">
+    <path d="M0 0h3v1h-3z M11 0h11v1h-11z M0 1h3v1h-3z M11 1h13v1h-13z M0 2h3v1h-3z M11 2h13v1h-13z M0 3h3v1h-3z M13 3h3v1h-3z M21 3h4v1h-4z M0 4h3v1h-3z M13 4h3v1h-3z M22 4h3v1h-3z M0 5h3v1h-3z M13 5h3v1h-3z M22 5h3v1h-3z M0 6h3v1h-3z M13 6h3v1h-3z M21 6h3v1h-3z M0 7h3v1h-3z M13 7h11v1h-11z M0 8h3v1h-3z M13 8h9v1h-9z M0 9h3v1h-3z M13 9h11v1h-11z M0 10h3v1h-3z M13 10h3v1h-3z M21 10h4v1h-4z M0 11h3v1h-3z M13 11h3v1h-3z M22 11h3v1h-3z M0 12h3v1h-3z M13 12h3v1h-3z M22 12h3v1h-3z M0 13h3v1h-3z M13 13h3v1h-3z M21 13h4v1h-4z M0 14h10v1h-10z M11 14h14v1h-14z M0 15h10v1h-10z M11 15h13v1h-13z M0 16h10v1h-10z M11 16h11v1h-11z"/>
+  </g>
+</svg>
