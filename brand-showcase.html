@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LB Brand Identity & Mascot System | Lokesh Balaji</title>
+  <meta name="description" content="Official Brand Identity, Vector Pixel Monogram System & 3D Developer Mascot Architecture for Lokesh Balaji.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon-lb.svg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    :root {
+      --bg-dark: #070911;
+      --bg-card: rgba(15, 23, 42, 0.75);
+      --bg-card-border: rgba(255, 255, 255, 0.1);
+      --grad-squircle: linear-gradient(135deg, #5b6cf0 0%, #3b82f6 45%, #00d2ff 100%);
+      --neon-cyan: #00f0ff;
+      --neon-green: #39ff14;
+      --neon-purple: #8b5cf6;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --font-display: 'Space Grotesk', sans-serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+      --font-code: 'JetBrains Mono', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      background-image: 
+        radial-gradient(circle at 15% 20%, rgba(91, 108, 240, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 85% 60%, rgba(0, 210, 255, 0.12) 0%, transparent 45%),
+        radial-gradient(circle at 50% 90%, rgba(57, 255, 20, 0.08) 0%, transparent 40%);
+      background-attachment: fixed;
+      color: var(--text-main);
+      font-family: var(--font-body);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    /* Constellation Tech Grid Backdrop */
+    .bg-grid {
+      position: fixed;
+      inset: 0;
+      background-size: 40px 40px;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Top Navigation */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 0;
+      border-bottom: 1px solid var(--bg-card-border);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(7, 9, 17, 0.85);
+    }
+
+    .brand-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      text-decoration: none;
+      color: var(--text-main);
+    }
+
+    .nav-badge-img {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(91, 108, 240, 0.45);
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .brand-wrap:hover .nav-badge-img {
+      transform: rotate(-6deg) scale(1.08);
+    }
+
+    .nav-title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.15rem;
+      display: block;
+    }
+
+    .nav-subtitle {
+      font-size: 0.78rem;
+      color: var(--neon-cyan);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.55rem 1.15rem;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.88rem;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      cursor: pointer;
+      border: 1px solid transparent;
+    }
+
+    .btn-outline {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: var(--bg-card-border);
+      color: var(--text-main);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: var(--neon-cyan);
+      color: var(--neon-cyan);
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: var(--grad-squircle);
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(91, 108, 240, 0.4);
+    }
+
+    .btn-primary:hover {
+      box-shadow: 0 6px 20px rgba(0, 210, 255, 0.55);
+      transform: translateY(-2px);
+    }
+
+    /* Hero Section */
+    .hero-banner {
+      text-align: center;
+      padding: 3.5rem 0 2.5rem;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.95rem;
+      border-radius: 999px;
+      background: rgba(91, 108, 240, 0.15);
+      border: 1px solid rgba(91, 108, 240, 0.4);
+      color: #a5b4fc;
+      font-size: 0.82rem;
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: 2.8rem;
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-title .gradient-text {
+      background: linear-gradient(135deg, #00f0ff, #818cf8, #c084fc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-description {
+      max-width: 680px;
+      margin: 0 auto 2rem;
+      color: var(--text-muted);
+      font-size: 1.05rem;
+    }
+
+    /* Styles Split Section */
+    .showcase-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .style-card {
+      background: var(--bg-card);
+      border: 1px solid var(--bg-card-border);
+      border-radius: 24px;
+      padding: 2.25rem;
+      backdrop-filter: blur(16px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .style-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--grad-squircle);
+    }
+
+    .card-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.25rem 0.75rem;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      width: fit-content;
+    }
+
+    .badge-icon-style {
+      background: rgba(91, 108, 240, 0.2);
+      border: 1px solid rgba(91, 108, 240, 0.4);
+      color: #93c5fd;
+    }
+
+    .badge-mascot-style {
+      background: rgba(0, 240, 255, 0.15);
+      border: 1px solid rgba(0, 240, 255, 0.35);
+      color: var(--neon-cyan);
+    }
+
+    .card-title {
+      font-family: var(--font-display);
+      font-size: 1.7rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .card-desc {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      margin-bottom: 1.75rem;
+    }
+
+    /* Style 1: Pixel Badge Preview Canvas */
+    .icon-preview-stage {
+      background: rgba(8, 12, 24, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 18px;
+      padding: 2.25rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.75rem;
+      position: relative;
+    }
+
+    .main-squircle-preview {
+      width: 140px;
+      height: 140px;
+      margin-bottom: 1.75rem;
+      filter: drop-shadow(0 12px 28px rgba(91, 108, 240, 0.5)) drop-shadow(0 4px 12px rgba(0, 210, 255, 0.4));
+      transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .main-squircle-preview:hover {
+      transform: scale(1.08) rotate(-4deg);
+    }
+
+    /* Multi-Size Scaling Ladder */
+    .size-ladder {
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      gap: 1.5rem;
+      width: 100%;
+      padding-top: 1.25rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .size-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .size-label {
+      font-size: 0.72rem;
+      font-family: var(--font-code);
+      color: var(--text-muted);
+    }
+
+    /* Color Swatches */
+    .color-swatches {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.75rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .swatch-item {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 0.65rem;
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .swatch-item:hover {
+      transform: translateY(-3px);
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+
+    .swatch-color {
+      height: 32px;
+      border-radius: 8px;
+      margin-bottom: 0.45rem;
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+    }
+
+    .swatch-hex {
+      font-family: var(--font-code);
+      font-size: 0.75rem;
+      font-weight: 600;
+      display: block;
+    }
+
+    /* Style 2: Mascot Preview Stage */
+    .mascot-preview-stage {
+      background: rgba(8, 12, 24, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 18px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.75rem;
+      position: relative;
+      min-height: 280px;
+    }
+
+    .mascot-interactive-wrap {
+      width: 220px;
+      height: 220px;
+      position: relative;
+      cursor: grab;
+      transition: transform 0.2s ease;
+      filter: drop-shadow(0 15px 35px rgba(0, 240, 255, 0.35));
+    }
+
+    .mascot-interactive-wrap:hover {
+      transform: scale(1.05);
+    }
+
+    .mascot-interactive-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 20px;
+    }
+
+    .mascot-controls {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+
+    .pill-btn {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: var(--text-main);
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: all 0.2s ease;
+    }
+
+    .pill-btn.active, .pill-btn:hover {
+      background: rgba(0, 240, 255, 0.15);
+      border-color: var(--neon-cyan);
+      color: var(--neon-cyan);
+    }
+
+    /* Mascot Lore / Anatomy List */
+    .anatomy-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .anatomy-item {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 12px;
+      padding: 0.75rem 1rem;
+    }
+
+    .anatomy-title {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--neon-cyan);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .anatomy-desc {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    /* Code Snippet Box */
+    .code-box {
+      background: #05070e;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 1rem;
+      position: relative;
+      margin-bottom: 1.5rem;
+      overflow-x: auto;
+    }
+
+    .code-box pre {
+      font-family: var(--font-code);
+      font-size: 0.78rem;
+      color: #38bdf8;
+      line-height: 1.5;
+    }
+
+    .code-copy-btn {
+      position: absolute;
+      top: 0.65rem;
+      right: 0.65rem;
+      background: rgba(255, 255, 255, 0.1);
+      border: none;
+      color: var(--text-main);
+      padding: 0.3rem 0.65rem;
+      border-radius: 6px;
+      font-size: 0.72rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .code-copy-btn:hover {
+      background: var(--neon-cyan);
+      color: #070911;
+    }
+
+    /* Action Buttons Row */
+    .action-row {
+      display: flex;
+      gap: 0.85rem;
+      margin-top: auto;
+    }
+
+    /* Toast Notification */
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: #0f172a;
+      border: 1px solid var(--neon-cyan);
+      color: #ffffff;
+      padding: 0.75rem 1.25rem;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 240, 255, 0.35);
+      font-size: 0.88rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.3s ease;
+      z-index: 1000;
+      pointer-events: none;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 900px) {
+      .showcase-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-title {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bg-grid"></div>
+
+  <!-- Top Navigation Bar -->
+  <header class="navbar">
+    <div class="container" style="display:flex; justify-content:space-between; align-items:center; width:100%;">
+      <a href="index.html" class="brand-wrap">
+        <img src="assets/lb-badge-pixel.svg" alt="LB Logo" class="nav-badge-img">
+        <div>
+          <span class="nav-title">Lokesh Balaji</span>
+          <span class="nav-subtitle">Brand System &amp; Mascot</span>
+        </div>
+      </a>
+      <div class="nav-actions">
+        <a href="index.html" class="btn btn-outline">
+          <i class="fa-solid fa-arrow-left"></i>
+          <span>Back to Portfolio</span>
+        </a>
+        <a href="https://wa.me/919445259662?text=Hi%20Lokesh,%20I%20love%20the%20LB%20brand%20identity%20and%20mascot!" target="_blank" class="btn btn-primary">
+          <i class="fa-brands fa-whatsapp"></i>
+          <span>Let's Talk</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Header -->
+  <main class="container">
+    <section class="hero-banner">
+      <div class="hero-tag">
+        <i class="fa-solid fa-shield-halved"></i>
+        <span>Official Brand Architecture • 2026 Edition</span>
+      </div>
+      <h1 class="hero-title">
+        The <span class="gradient-text">"LB" Visual Identity</span> &amp; Mascot
+      </h1>
+      <p class="hero-description">
+        Crafted to pair sleek retro 8-bit cyber-minimalism with a dynamic 3D developer mascot — built for web developer <strong>Lokesh Balaji</strong>.
+      </p>
+    </section>
+
+    <!-- Main Grid: Style 1 vs Style 2 -->
+    <div class="showcase-grid">
+
+      <!-- ==================== STYLE 1: PIXEL SQUIRCLE BADGE ==================== -->
+      <section class="style-card" id="style-pixel-badge">
+        <span class="card-badge badge-icon-style">
+          <i class="fa-solid fa-cube"></i> Style 1: App Icon / Monogram
+        </span>
+        <h2 class="card-title">Pixel Squircle "LB" Badge</h2>
+        <p class="card-desc">
+          1:1 rounded squircle with diagonal violet-to-cyan glass gradient, subtle specular rim highlight, and authentic 25&times;17 stepped retro pixel typography.
+        </p>
+
+        <!-- Preview Stage -->
+        <div class="icon-preview-stage">
+          <img src="assets/lb-badge-pixel.svg" alt="LB Pixel Badge HD" class="main-squircle-preview" id="squircle-main">
+
+          <!-- Scale Ladder -->
+          <div class="size-ladder">
+            <div class="size-item">
+              <img src="assets/lb-badge-pixel.svg" width="16" height="16" alt="16px">
+              <span class="size-label">16px</span>
+            </div>
+            <div class="size-item">
+              <img src="assets/lb-badge-pixel.svg" width="32" height="32" alt="32px">
+              <span class="size-label">32px</span>
+            </div>
+            <div class="size-item">
+              <img src="assets/lb-badge-pixel.svg" width="48" height="48" alt="48px">
+              <span class="size-label">48px</span>
+            </div>
+            <div class="size-item">
+              <img src="assets/lb-badge-pixel.svg" width="64" height="64" alt="64px">
+              <span class="size-label">64px</span>
+            </div>
+            <div class="size-item">
+              <img src="assets/lb-badge-pixel.svg" width="96" height="96" alt="96px">
+              <span class="size-label">96px</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Color Tokens -->
+        <div class="color-swatches">
+          <div class="swatch-item" onclick="copyHex('#5B6CF0')">
+            <div class="swatch-color" style="background: #5B6CF0;"></div>
+            <span class="swatch-hex">#5B6CF0</span>
+          </div>
+          <div class="swatch-item" onclick="copyHex('#3B82F6')">
+            <div class="swatch-color" style="background: #3B82F6;"></div>
+            <span class="swatch-hex">#3B82F6</span>
+          </div>
+          <div class="swatch-item" onclick="copyHex('#2D95E1')">
+            <div class="swatch-color" style="background: #2D95E1;"></div>
+            <span class="swatch-hex">#2D95E1</span>
+          </div>
+          <div class="swatch-item" onclick="copyHex('#00D2FF')">
+            <div class="swatch-color" style="background: #00D2FF;"></div>
+            <span class="swatch-hex">#00D2FF</span>
+          </div>
+        </div>
+
+        <!-- CSS Snippet Box -->
+        <div class="code-box">
+          <button class="code-copy-btn" onclick="copyCssSnippet()">Copy CSS</button>
+          <pre id="css-snippet">.lb-badge {
+  width: 44px;
+  height: 44px;
+  border-radius: 13px;
+  background: linear-gradient(135deg, #5B6CF0 0%, #3B82F6 45%, #00D2FF 100%);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  box-shadow: 0 4px 16px rgba(91, 108, 240, 0.45);
+}</pre>
+        </div>
+
+        <!-- Downloads & Actions -->
+        <div class="action-row">
+          <a href="assets/lb-badge-pixel.svg" download="lb-badge-pixel.svg" class="btn btn-primary" style="flex:1; justify-content:center;">
+            <i class="fa-solid fa-download"></i> Download SVG
+          </a>
+          <a href="assets/favicon-lb.svg" download="favicon-lb.svg" class="btn btn-outline">
+            <i class="fa-solid fa-bookmark"></i> Favicon
+          </a>
+        </div>
+      </section>
+
+      <!-- ==================== STYLE 2: 3D DEVELOPER MASCOT ==================== -->
+      <section class="style-card" id="style-mascot-3d">
+        <span class="card-badge badge-mascot-style">
+          <i class="fa-solid fa-robot"></i> Style 2: 3D Tech Mascot
+        </span>
+        <h2 class="card-title">3D "LB" Developer Mascot</h2>
+        <p class="card-desc">
+          Character concept fusing letters "L" (foundation base) and "B" (bug/robot dev companion) with debug radar antennas, luminous green oculars, and floating &lt;/&gt; code tags.
+        </p>
+
+        <!-- Preview Stage with 3D Tilt -->
+        <div class="mascot-preview-stage" id="mascot-stage">
+          <div class="mascot-interactive-wrap" id="mascot-card">
+            <img src="assets/lb-mascot.jpg" alt="3D LB Mascot" id="mascot-display-img">
+          </div>
+
+          <div class="mascot-controls">
+            <button class="pill-btn active" id="btn-toggle-glow" onclick="toggleMascotGlow()">
+              <i class="fa-solid fa-bolt"></i> Neon Rim Glow
+            </button>
+            <button class="pill-btn" id="btn-toggle-svg" onclick="toggleMascotAsset()">
+              <i class="fa-solid fa-vector-square"></i> Switch to SVG Vector
+            </button>
+          </div>
+        </div>
+
+        <!-- Anatomy / Lore Breakdown -->
+        <div class="anatomy-grid">
+          <div class="anatomy-item">
+            <div class="anatomy-title">
+              <i class="fa-solid fa-layer-group"></i> Letter "L" Foundation
+            </div>
+            <div class="anatomy-desc">Extruded 3D block letter base with cyan chamfer rims and left arm on hip.</div>
+          </div>
+          <div class="anatomy-item">
+            <div class="anatomy-title">
+              <i class="fa-solid fa-satellite-dish"></i> Bug Antennas
+            </div>
+            <div class="anatomy-desc">Dual spherical radar antennas for real-time bug scanning and syntax telemetry.</div>
+          </div>
+          <div class="anatomy-item">
+            <div class="anatomy-title">
+              <i class="fa-solid fa-eye text-emerald" style="color:#39ff14;"></i> Green Debug Eyes
+            </div>
+            <div class="anatomy-desc">Neon lime oculars (#39FF14) with pupil reflection dots detecting 100% bugs.</div>
+          </div>
+          <div class="anatomy-item">
+            <div class="anatomy-title">
+              <i class="fa-solid fa-code" style="color:#00f0ff;"></i> Floating &lt;/&gt; Tags
+            </div>
+            <div class="anatomy-desc">Levitating neon cyan brackets held in open palm representing clean semantic web.</div>
+          </div>
+        </div>
+
+        <!-- Downloads & Actions -->
+        <div class="action-row">
+          <a href="assets/lb-mascot.jpg" download="lb-mascot-hd.jpg" class="btn btn-primary" style="flex:1; justify-content:center;">
+            <i class="fa-solid fa-download"></i> Download HD Poster (JPG)
+          </a>
+          <a href="assets/lb-mascot.svg" download="lb-mascot-vector.svg" class="btn btn-outline">
+            <i class="fa-solid fa-code"></i> Vector SVG
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast-msg">
+    <i class="fa-solid fa-circle-check" style="color:var(--neon-green)"></i>
+    <span id="toast-text">Copied to clipboard!</span>
+  </div>
+
+  <script>
+    function showToast(msg) {
+      const toast = document.getElementById('toast-msg');
+      const text = document.getElementById('toast-text');
+      text.textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 2500);
+    }
+
+    function copyHex(hex) {
+      navigator.clipboard.writeText(hex).then(() => {
+        showToast(`Copied color ${hex} to clipboard!`);
+      });
+    }
+
+    function copyCssSnippet() {
+      const code = document.getElementById('css-snippet').textContent;
+      navigator.clipboard.writeText(code).then(() => {
+        showToast('CSS snippet copied to clipboard!');
+      });
+    }
+
+    // Mascot 3D Tilt on Mouse Move
+    const stage = document.getElementById('mascot-stage');
+    const card = document.getElementById('mascot-card');
+
+    stage.addEventListener('mousemove', (e) => {
+      const rect = stage.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      const rotateX = (-y / rect.height) * 22;
+      const rotateY = (x / rect.width) * 22;
+      card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.06)`;
+    });
+
+    stage.addEventListener('mouseleave', () => {
+      card.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg) scale(1)';
+    });
+
+    let glowActive = true;
+    function toggleMascotGlow() {
+      glowActive = !glowActive;
+      const btn = document.getElementById('btn-toggle-glow');
+      if (glowActive) {
+        card.style.filter = 'drop-shadow(0 15px 35px rgba(0, 240, 255, 0.45)) drop-shadow(0 5px 15px rgba(57, 255, 20, 0.3))';
+        btn.classList.add('active');
+        showToast('Neon Glow Enabled');
+      } else {
+        card.style.filter = 'none';
+        btn.classList.remove('active');
+        showToast('Neon Glow Disabled');
+      }
+    }
+
+    let isSvg = false;
+    function toggleMascotAsset() {
+      isSvg = !isSvg;
+      const img = document.getElementById('mascot-display-img');
+      const btn = document.getElementById('btn-toggle-svg');
+      if (isSvg) {
+        img.src = 'assets/lb-mascot.svg';
+        btn.innerHTML = '<i class="fa-solid fa-image"></i> Switch to 3D Render';
+        btn.classList.add('active');
+        showToast('Switched to Vector SVG format');
+      } else {
+        img.src = 'assets/lb-mascot.jpg';
+        btn.innerHTML = '<i class="fa-solid fa-vector-square"></i> Switch to SVG Vector';
+        btn.classList.remove('active');
+        showToast('Switched to 3D Render format');
+      }
+    }
+  </script>
+</body>
+</html>
